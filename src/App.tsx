@@ -5,7 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-  const [count, setCount] = useState(false);
+  const [incart, setInCart] = useState(false);
+
+  const handleCartToggle = () => {
+    setInCart(!incart);
+  };
 
   return (
     <>
@@ -22,9 +26,12 @@ function App() {
               ></img>
               <button
                 aria-label="Add to cart"
-                className="relative z-30 border bottom-5 p-14 text-sm font-bold text-Rose_900900 border- rounded-full py-3 border-Rose_300 bg-white active:bg-Red  focus:outline-none focus:text-Rose_50 focus:bg-Red"
+                className="relative z-30 border bottom-5 p-7 text-sm font-bold text-Rose_900900 border- rounded-full py-3 border-Rose_300 bg-white active:bg-Red  focus:outline-none focus:text-Rose_50 focus:bg-Red"
               >
-                <FontAwesomeIcon icon={faCartPlus} className="px-3" />
+                <FontAwesomeIcon
+                  icon={faCartPlus}
+                  className="px-2 border-Red"
+                />
                 Add to Cart
               </button>
             </li>
