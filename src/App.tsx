@@ -1,6 +1,12 @@
+import { useState } from "react";
 import "./App.css";
 import waffle from "./assets/Images/image-waffle-mobile.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+
 function App() {
+  const [count, setCount] = useState(false);
+
   return (
     <>
       <div className="min-h-screen bg-Rose_50 p-6 text-left ">
@@ -16,8 +22,9 @@ function App() {
               ></img>
               <button
                 aria-label="Add to cart"
-                className="relative z-30 bottom-5 p-14 text-sm font-bold text-Rose_900900 border- rounded-full py-3 border-Rose_300 bg-white active:bg-Red  focus:outline-none focus:text-Rose_50 focus:bg-Red"
+                className="relative z-30 border bottom-5 p-14 text-sm font-bold text-Rose_900900 border- rounded-full py-3 border-Rose_300 bg-white active:bg-Red  focus:outline-none focus:text-Rose_50 focus:bg-Red"
               >
+                <FontAwesomeIcon icon={faCartPlus} className="px-3" />
                 Add to Cart
               </button>
             </li>
