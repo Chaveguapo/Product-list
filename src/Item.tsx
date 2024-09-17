@@ -1,15 +1,20 @@
 import { useState } from "react";
 import waffle from "./assets/Images/image-waffle-mobile.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-  const [incart, setInCart] = useState(false);
+  const [itemCount, setItemCount] = useState(0);
 
-  const handleCartToggle = () => {
-    setInCart(!incart);
+  const handleAddToCart = () => {
+    setItemCount(itemCount + 1);
   };
 
+  const handleRemoveFromCart = () => {
+    if (itemCount > 0) {
+      setItemCount(itemCount - 1);
+    }
+  };
   return (
     <>
       <div className="min-h-screen bg-Rose_50 p-6 text-left ">
@@ -17,20 +22,24 @@ function App() {
 
         <div>
           <ul>
-            <li className=" flex flex-col items-center pt-4 ">
+            <li
+              className={
+                "flex flex-col items-center pt-4border-4 border-Red border-none"
+              }
+            >
               <img
                 src={waffle}
-                className="rounded-lg static"
+                className={"rounded-lg static transition-all duration-300"}
                 alt="waffle_with_berries"
               ></img>
               <button
                 aria-label="Add to cart"
-                className="relative z-30 border bottom-5 p-7 text-sm font-bold text-Rose-900 border- rounded-full py-3 border-Rose_300 bg-white active:bg-Red active:border-none focus:outline-none focus:text-Rose_50 focus:bg-Red"
+                className={`relative z-30 border bottom-5 p-7 text-sm font-bold text-Rose-900 rounded-full py-3 ${
+                  itemCount ? "bg-Red text-white" : "bg-white text-Rose_900"
+                } focus:outline-none transition-all duration-300`}
+                // onClick={handleCartToggle}
               >
-                <FontAwesomeIcon
-                  icon={faCartPlus}
-                  className="px-2 border-Red"
-                />
+                <FontAwesomeIcon icon={faCartPlus} className="px-3" />
                 Add to Cart
               </button>
             </li>
