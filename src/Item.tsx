@@ -35,7 +35,7 @@ function App() {
               ></img>
               <div
                 aria-label="Add to cart"
-                className="relative z-30 border bottom-5 px-5 p-3 text-center text-sm font-bold text-Rose-900 rounded-full 
+                className="relative z-30 border border-Red bottom-5 px-5 p-3 text-center text-sm font-bold text-Rose-900 rounded-full 
               bg-white text-Rose_900 flex gap-2 cursor-pointer "
               >
                 <img src={AddToCart} />
