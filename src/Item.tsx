@@ -1,7 +1,8 @@
 import { useState } from "react";
 import waffle from "./assets/Images/image-waffle-mobile.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import AddToCart from "./assets/icons/icon-add-to-cart.svg";
+import increment from "./assets/icons/icon-increment-quantity.svg";
+import decrement from "./assets/icons/icon-decrement-quantity.svg";
 
 function App() {
   const [itemCount, setItemCount] = useState(0);
@@ -32,23 +33,22 @@ function App() {
                 className="rounded-lg"
                 alt="waffle_with_berries"
               ></img>
-              <button
+              <div
                 aria-label="Add to cart"
-                className="relative z-30 border bottom-5 p-7 text-sm font-bold text-Rose-900 rounded-full py-3 
-              bg-white text-Rose_900"
+                className="relative z-30 border bottom-5 px-5 p-3 text-center text-sm font-bold text-Rose-900 rounded-full 
+              bg-white text-Rose_900 flex gap-2 "
               >
-                <FontAwesomeIcon icon={faCartPlus} className="px-3" />
+                <img src={AddToCart} />
                 Add to Cart
-              </button>
-
-              <button
+              </div>
+              <div
                 aria-label="Count of items"
-                className=" flex justify-between relative z-30 rounded-full px-14 p-3 text-sm font-bold bg-Red text-white"
+                className=" flex gap-6 relative align-middle z-30 rounded-full px-9 p-3 text-sm font-bold bg-Red text-white"
               >
-                <FontAwesomeIcon icon={faMinus} />
+                <img src={decrement} />
                 <p>{itemCount}</p>
-                <FontAwesomeIcon icon={faPlus} />
-              </button>
+                <img src={increment} />
+              </div>
             </li>
             <div className="p-2">
               <h3 className="text-sm text-Rose_400">Waffle</h3>
