@@ -1,5 +1,6 @@
 import { useState } from "react";
 import waffle from "./assets/Images/image-waffle-mobile.jpg";
+import waffleMobile from "./assets/Images/image-waffle-mobile.jpg";
 import AddToCart from "./assets/icons/icon-add-to-cart.svg";
 import increment from "./assets/icons/icon-increment-quantity.svg";
 import decrement from "./assets/icons/icon-decrement-quantity.svg";
@@ -21,14 +22,14 @@ function App() {
       <div className=" font-display bg-Rose_50 p-6 text-left  ">
         <h1 className="font-bold pb-6 text-3xl text-Rose_900">Desserts</h1>
 
-        <div className="display:block md:flex ">
+        <div>
           <ul>
             <li>
-              <div className=" flex relative border border-Red rounded-lg mb-8 mx-auto md:max-w-2xl">
+              <div className="relative border border-Red rounded-lg mb-8 mx-auto md:max-w-xs">
                 <div>
                   <img
                     src={waffle}
-                    className="block rounded-lg"
+                    className="w-full h-auto  object-cover md:aspect-square rounded-lg"
                     alt="waffle_with_berries"
                   ></img>
                 </div>
